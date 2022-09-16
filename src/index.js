@@ -10,6 +10,8 @@ import GastosPorCategoria from './componentes/GastosPorCategoria';
 import ListaDeGastos from './componentes/ListaDeGastos';
 import RegistroUsuarios from './componentes/RegistroUsuarios';
 import InicioSesion from './componentes/inicioSesion';
+import Fondo from './elementos/Fondo';
+
 
 WebFont.load({
   google: {
@@ -31,5 +33,6 @@ root.render(
     </Routes>
     <Contenedor/>
     </BrowserRouter>
+    <Fondo/>
   </React.StrictMode>
 );
