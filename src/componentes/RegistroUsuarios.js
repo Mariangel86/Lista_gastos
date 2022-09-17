@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const RegistroUsuarios=()=> {
   const Svg = styled(SvgLogin)`
-  width: 100%auto;
+  width: 100%;
   max-height: 6.25 rem;
   margin-bottom: 1.25 rem;
   `;
