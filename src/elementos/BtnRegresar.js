@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as IconoFlecha } from './../imagenes/flecha.png';
+import { ReactComponent as IconoFlecha } from './../imagenes/flecha.svg';
 import { useNavigate } from "react-router-dom";
 
 const Btn = styled.button`

@@ -15,24 +15,24 @@ import Fondo from './elementos/Fondo';
 
 WebFont.load({
   google: {
-    families: ['Worksans:400,500,700', 'sans-serif']
+    families: ['Work sans', 'sans-serif']
   }
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+<>
     <BrowserRouter>
     <Routes>
-    <Route path='/Iniciar-Sesion' element={<InicioSesion/>}/>
+      <Route path='/Iniciar-Sesion' element={<InicioSesion/>}/>
       <Route path='/Crear-cuenta' element={<RegistroUsuarios/>}/>
       <Route path='/Categorias' element={<GastosPorCategoria/>}/>
       <Route path='/Lista' element={<ListaDeGastos/>}/>
-      <Route path='/Editar/:id' element={<EditarGasto></EditarGasto>}/>
+      <Route path='/Editar/:id' element={<EditarGasto/>}/>
       <Route  path='/' element= {<App/>}/>
     </Routes>
     <Contenedor/>
     </BrowserRouter>
     <Fondo/>
-  </React.StrictMode>
+    </>
 );
