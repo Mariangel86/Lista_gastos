@@ -15,7 +15,7 @@ import Fondo from './elementos/Fondo';
 
 WebFont.load({
   google: {
-    families: ['Work sans', 'sans-serif']
+    families: ['Work sans 400,500,700', 'sans-serif']
   }
 });
 
