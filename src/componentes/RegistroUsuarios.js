@@ -84,7 +84,7 @@ const RegistroUsuarios=()=> {
               mensaje = 'Hubo un error al intentar crear la cuenta.'
           break;
       }
-      console.log(mensaje);
+      cambiarAlerta({tipo:'error', mensaje:{mensaje}});
       }
   }
 
