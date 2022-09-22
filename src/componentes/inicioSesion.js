@@ -5,7 +5,9 @@ import Boton from './../elementos/Boton';
 import {ContenedorBoton, Input, Formulario} from './../elementos/ElementosDeFormulario';
 import { ReactComponent as SvgLogin } from './../imagenes/login.svg';
 import styled from "styled-components";
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebaseConfig";
+import Alerta from "../elementos/Alerta";
 
   const Svg = styled(SvgLogin)`
   width: 100%;
@@ -39,7 +41,7 @@ const InicioSesion=()=> {
     });
     return;
     }
-    if (correo === '' || password === '' || password2 === ''){
+    if (correo === '' || password === ''){
         cambiarEstadoAlerta(true)
         cambiarAlerta({
           tipo: 'error',
@@ -47,31 +49,20 @@ const InicioSesion=()=> {
         });
         return;
     }
-    if (password !== password2){
-      cambiarEstadoAlerta(true)
-      cambiarAlerta({
-        tipo: 'error',
-        mensaje: 'Las contrasenas no son iguales'
-      });
-      return;
-    }
+  
     try {
-      await createUserWithEmailAndPassword (auth,correo,password);
+      await signInWithEmailAndPassword (auth,correo,password);
       navigate('/');
     }  catch (error){
       cambiarEstadoAlerta(true);
 
         let mensaje;
         switch(error.code){
-          case 'auth/invalid-password':
-              mensaje = 'La contraseña tiene que ser de al menos 6 caracteres.'
-              break;
-          case 'auth/email-already-in-use':
-              mensaje = 'Ya existe una cuenta con el correo electrónico proporcionado.'
-          break;
-          case 'auth/invalid-email':
-              mensaje = 'El correo electrónico no es válido.'
-          break;
+          case 'auth/wrong-password':
+            mensaje= 'la contrasena no es correcta.'
+            break;
+            case 'auth/user-not-found':
+              mensaje= 'no se encontro ningun usuario existente'
           default:
               mensaje = 'Hubo un error al intentar crear la cuenta.'
           break;
@@ -112,6 +103,10 @@ const InicioSesion=()=> {
       <Boton as="button" primario type="submit">Iniciar Sesion</Boton>
       </ContenedorBoton>
     </Formulario>
+    <Alerta tipo={alerta.tipo}
+            mensaje={alerta.mensaje}
+            estadoAlerta={estadoAlerta}
+            cambiarEstadoAlerta={cambiarEstadoAlerta}/>
     </>
   );
 }
