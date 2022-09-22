@@ -13,6 +13,19 @@ import styled from "styled-components";
   margin-bottom: 1.25 rem;
   `;
 const InicioSesion=()=> {
+
+  const [correo, establecerCorreo]= useState('');
+  const [password, establecerPassword]= useState('');
+  const [alerta, cambiarAlerta]= useState({});
+  const [estadoAlerta, cambiarEstadoAlerta]= useState(false);
+  const navigate= useNavigate ();
+  const handleChange=(e)=>{
+    if (e.target.name=== 'email'){
+      establecerCorreo(e.target.value);
+    } else if (e.target.name=== 'password'){
+      establecerPassword(e.target.value);
+    }
+  }
   return (
 <>
     <Helmet>
@@ -32,11 +45,15 @@ const InicioSesion=()=> {
       type="email"
       name="email"
       placeholder="Correo Electronico"
+      value={correo}
+      onChange={handleChange}
       />
       <Input
       type="password"
       name="password"
       placeholder="Contrasena"
+      value={password}
+      onChange={handleChange}
       />
       <ContenedorBoton>
       <Boton as="button" primario type="submit">Iniciar Sesion</Boton>
