@@ -26,6 +26,59 @@ const InicioSesion=()=> {
       establecerPassword(e.target.value);
     }
   }
+  const handleSubmit= async (e)=> {
+    e.preventDefault();
+  
+
+  const expresionRegular= /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
+  if (!expresionRegular.test(correo)){
+    cambiarEstadoAlerta(true)
+    cambiarAlerta({
+      tipo: 'error',
+      mensaje: 'Por favor ingresa un correo valido'
+    });
+    return;
+    }
+    if (correo === '' || password === '' || password2 === ''){
+        cambiarEstadoAlerta(true)
+        cambiarAlerta({
+          tipo: 'error',
+          mensaje: 'Por favor ingresa todos los datos'
+        });
+        return;
+    }
+    if (password !== password2){
+      cambiarEstadoAlerta(true)
+      cambiarAlerta({
+        tipo: 'error',
+        mensaje: 'Las contrasenas no son iguales'
+      });
+      return;
+    }
+    try {
+      await createUserWithEmailAndPassword (auth,correo,password);
+      navigate('/');
+    }  catch (error){
+      cambiarEstadoAlerta(true);
+
+        let mensaje;
+        switch(error.code){
+          case 'auth/invalid-password':
+              mensaje = 'La contraseña tiene que ser de al menos 6 caracteres.'
+              break;
+          case 'auth/email-already-in-use':
+              mensaje = 'Ya existe una cuenta con el correo electrónico proporcionado.'
+          break;
+          case 'auth/invalid-email':
+              mensaje = 'El correo electrónico no es válido.'
+          break;
+          default:
+              mensaje = 'Hubo un error al intentar crear la cuenta.'
+          break;
+      }
+      cambiarAlerta({tipo:'error', mensaje:{mensaje}});
+      }
+  }
   return (
 <>
     <Helmet>
@@ -39,7 +92,7 @@ const InicioSesion=()=> {
         </div>
         </ContenedorHeader>
     </Header>
-    <Formulario>
+    <Formulario onSubmit={handleSubmit}>
       <Svg/>
       <Input
       type="email"
