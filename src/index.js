@@ -11,7 +11,7 @@ import ListaDeGastos from './componentes/ListaDeGastos';
 import RegistroUsuarios from './componentes/RegistroUsuarios';
 import InicioSesion from './componentes/inicioSesion';
 import Fondo from './elementos/Fondo';
-
+import {AuthProvider} from './contextos/AuthContextos'
 
 WebFont.load({
   google: {
@@ -22,6 +22,7 @@ WebFont.load({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <>
+<AuthProvider>
     <BrowserRouter>
     <Routes>
       <Route path='/Iniciar-Sesion' element={<InicioSesion/>}/>
@@ -33,6 +34,7 @@ root.render(
     </Routes>
     <Contenedor/>
     </BrowserRouter>
+    </AuthProvider>
     <Fondo/>
     </>
 );
