@@ -3,8 +3,9 @@ import styled from "styled-components";
 import theme from "../elementos/theme";
 import {ReactComponent as IconoDown} from '../imagenes/down.svg';
 
-const SelectCategorias=()=>{
+const SelectCategorias=({categoria, cambiarCategoria})=>{
     const [mostrarSelect, cambiarMostrarSelect]= useState(false);
+
     const categorias = [
         {id: 'comida', texto: 'Comida'},
         {id: 'cuentas y pagos', texto: 'Cuentas y pagos'},
@@ -15,14 +16,22 @@ const SelectCategorias=()=>{
         {id: 'compras', texto: 'Compras'},
         {id: 'diversion', texto: 'Diversion'}
     ];
+    const handleClick=(e) =>{
+        cambiarCategoria(e.currentTarget.dataset.valor);
+    }
     return (
         <ContenedorSelect onClick={()=>cambiarMostrarSelect (!mostrarSelect)}>
          <OpcionSeleccionada>
-            Hogar <IconoDown/>
+            {categoria}<IconoDown/>
             </OpcionSeleccionada>
             <Opciones>
             {categorias.map((categoria)=>{
-               return <Opcion key={categoria.id}>{categoria.texto}</Opcion>
+               return <Opcion
+                key={categoria.id}
+                data-valor={categoria.id}
+                onClick={handleClick}>
+                {categoria.texto}
+                </Opcion>
             })}
             </Opciones>   
         </ContenedorSelect>

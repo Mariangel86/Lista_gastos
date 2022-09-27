@@ -7,6 +7,7 @@ import SelectCategorias from "./SelectCategorias";
 const FormularioGasto=()=>{
     const [inputDescripcion, cambiarInputDescripcion]=useState('');
     const [inputCantidad, cambiarInputCantidad]=useState('');
+    const [categoria, cambiarCategoria]=useState('hogar');
 
     const handleChange=(e)=>{
         if (e.target.name === 'descripcion'){
@@ -18,7 +19,8 @@ const FormularioGasto=()=>{
     return (
         <Formulario>
             <ContenedorFiltros>
-                <SelectCategorias/>
+                <SelectCategorias categoria={categoria}
+                cambiarCategoria={cambiarCategoria}/>
                 <p>Select</p>
                 <p>date piker</p>
             </ContenedorFiltros>
