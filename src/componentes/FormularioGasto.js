@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Boton from "../elementos/Boton";
 import {ContenedorBoton, InputGrande, Input, Formulario, ContenedorFiltros } from '../elementos/ElementosDeFormulario';
 import {ReactComponent as IconoPlus} from '../imagenes/plus.svg';
+import SelectCategorias from "./SelectCategorias";
 
 const FormularioGasto=()=>{
     const [inputDescripcion, cambiarInputDescripcion]=useState('');
@@ -17,6 +18,7 @@ const FormularioGasto=()=>{
     return (
         <Formulario>
             <ContenedorFiltros>
+                <SelectCategorias/>
                 <p>Select</p>
                 <p>date piker</p>
             </ContenedorFiltros>
