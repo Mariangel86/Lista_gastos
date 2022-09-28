@@ -12,7 +12,7 @@ const FormularioGasto=()=>{
     const handleChange=(e)=>{
         if (e.target.name === 'descripcion'){
             cambiarInputDescripcion(e.target.value);
-        } else if (e.target.name === 'valor');{
+        } else if (e.target.name==='valor'){
         cambiarInputCantidad (e.target.value.replace(/[^0-9.]/g,''));
         }
     }

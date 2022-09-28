@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import theme from "../elementos/theme";
 import {ReactComponent as IconoDown} from '../imagenes/down.svg';
-
+import IconoCategoria from "../elementos/IconoCategoria";
 const SelectCategorias=({categoria, cambiarCategoria})=>{
     const [mostrarSelect, cambiarMostrarSelect]= useState(false);
 
@@ -30,6 +30,7 @@ const SelectCategorias=({categoria, cambiarCategoria})=>{
                 key={categoria.id}
                 data-valor={categoria.id}
                 onClick={handleClick}>
+                    <IconoCategoria id={categoria.id}/>
                 {categoria.texto}
                 </Opcion>
             })}
