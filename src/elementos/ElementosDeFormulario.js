@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import theme from "./theme";
 
-
-
-
-
 const ContenedorFiltros = styled.div`
 	display: flex;
 	justify-content: space-between;
