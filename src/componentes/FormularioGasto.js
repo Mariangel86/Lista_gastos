@@ -7,14 +7,14 @@ import DatePiker from "./DatePiker";
 import fromUnixTime from "date-fns/fromUnixTime";
 import getUnixTime from "date-fns/getUnixTime";
 import agregarGasto from "../firebase/AgregarGasto";
-import {useAuth} from '../contextos/AuthContextos';
+import {UseAuth} from '../contextos/AuthContextos';
 import Alerta from '../elementos/Alerta';
 
 const FormularioGasto=()=>{
     const [inputDescripcion, cambiarInputDescripcion]=useState('');
     const [inputCantidad, cambiarInputCantidad]=useState('');
     const [categoria, cambiarCategoria]=useState('hogar');
-    const {usuario}= useAuth();
+    const {usuario}= UseAuth();
     const [estadoAlerta, cambiarEstadoAlerta]= useState(false);
     const [alerta, cambiarAlerta]= useState({});
 
@@ -38,7 +38,7 @@ const FormularioGasto=()=>{
             if (cantidad){
               agregarGasto ({
             categoria: categoria,
-		descripcion: descripcion,
+		descripcion: inputDescripcion,
 		cantidad: Number(cantidad),
 		fecha: getUnixTime (fecha),
 		uidUsuario: usuario.uid
