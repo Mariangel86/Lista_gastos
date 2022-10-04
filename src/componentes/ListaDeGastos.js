@@ -4,10 +4,26 @@ import {Header, Titulo} from './../elementos/Header';
 import BtnRegresar from "../elementos/BtnRegresar";
 import BarraTotalGastado from "./BarraTotalGastado";
 import useObtenerGastos from "../hooks/useObtenerGastos";
-import ElementoLista from "../elementos/ElementosDeLista";
+import IconoCategoria from '../elementos/IconoCategoria'
+import {
+  Lista ,
+  ElementoLista ,
+  ListaDeCategorias ,
+  ElementoListaCategorias ,
+  Categoria ,
+  Descripcion ,
+  Valor ,
+  Fecha,
+  ContenedorBotones ,
+  BotonAccion,
+  BotonCargarMas ,
+  ContenedorBotonCentral,
+  ContenedorSubtitulo,
+  Subtitulo
+} from '../elementos/ElementosDeLista';
 
 const ListaDeGastos=()=> {
-  const gastos=useObtenerGastos();
+  const [gastos]=useObtenerGastos();
   console.log(gastos);
   return (
     <>
@@ -18,6 +34,22 @@ const ListaDeGastos=()=> {
         <BtnRegresar/>
         <Titulo>Lista de Gastos</Titulo>
     </Header>
+    <Lista>
+      {gastos.map((gasto)=>{
+        return(
+          <ElementoLista key={gasto.id}>
+            <Categoria>
+              <IconoCategoria id={gasto.Categoria}/>
+              {gasto.Categoria}
+            </Categoria>
+            <Descripcion>
+              {gasto.descripcion}
+            </Descripcion>
+            <Valor>{gasto.cantidad}</Valor>
+          </ElementoLista>
+        );
+      })}
+      </Lista>
     <BarraTotalGastado/>
     </>
   );

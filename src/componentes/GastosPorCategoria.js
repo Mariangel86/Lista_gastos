@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import BtnRegresar from "../elementos/BtnRegresar";
 import BarraTotalGastado from "./BarraTotalGastado";
 
+
 const GastosCategoria=()=> {
   return (
       <>

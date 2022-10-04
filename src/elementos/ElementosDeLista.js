@@ -1,23 +1,23 @@
 import styled from 'styled-components';
-import theme from '../theme';
+import theme from '../elementos/theme';
  
-const List = styled. the `
+const Lista = styled.ul`
     list-style: none;
     padding: 0 2.5rem; /* 40px */
     height: 100%;
     overflow-y: auto;
  
-    that {
+    li {
         grid-template-columns: 1fr 1fr 1fr auto;
     }
  
     @media (max-width: 50rem) { /*80px*/
-        that {
+        li {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
         }
     }
-` ;
+`;
  
 const ElementoLista = styled.li`
     padding: 1.25rem 0; /* 20px */
@@ -36,22 +36,22 @@ const ElementoLista = styled.li`
     &:hover a {
         opacity: 1;
     }
-` ;
+`;
  
  
-const ListOfCategories = styled. ul `
+const ListaDeCategorias = styled.ul`
     list-style: none;
     padding: 0 2.5rem; /* 40px */
     height: 100%;
     overflow-y: auto;
-` ;
+`;
  
 const ElementoListaCategorias = styled.li`
     padding: 1.25rem 0; /* 20px */
     border-bottom: 2px solid #F2F2F2;
     display: flex;
     justify-content: space-between;
-` ;
+`;
  
 const Categoria = styled.div`
     font-weight: 500;
@@ -70,16 +70,16 @@ const Categoria = styled.div`
     @media (max-width: 50rem) { /* 80px */
         font-size: 1.12rem;
     }
-` ;
+`;
  
-const Description = styled. div `
+const Descripcion = styled.div`
     justify-content: center;
     font-size: 1.25rem;
     text-transform: capitalize;
     @media (max-width: 50rem) { /* 50px */
         justify-content: end;
     }
-` ;
+`;
  
 const Valor = styled.div`
     font-size: 1.25rem; /* 20px */
@@ -89,9 +89,9 @@ const Valor = styled.div`
     @media (max-width: 50rem) { /* 80px */
         justify-content: start;
     }
-` ;
+`;
  
-const Date = styled. div `
+const Fecha = styled.div`
     border-radius: 0.31rem; /* 5px */
     background: ${theme.azulClaro};
     text-align: center;
@@ -103,13 +103,13 @@ const Date = styled. div `
     @media (max-width: 50rem) { /* 80px */
         width: 100%;
     }
-` ;
+`;
  
 const ContenedorBotones = styled.div`
     @media (max-width: 50rem) { /* 80px */
         justify-content: end;
     }
-` ;
+`;
  
 const BotonAccion = styled.button`
     outline: none;
@@ -140,7 +140,7 @@ const BotonAccion = styled.button`
     @media (max-width: 50rem) { /* 80px */
         opacity: 1;
     }
-` ;
+`;
  
 const ContenedorSubtitulo = styled.div`
     height: 100%;
@@ -148,20 +148,20 @@ const ContenedorSubtitulo = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-` ;
+`;
  
-const Subtitle = styled. h3 `
+const Subtitulo = styled.h3`
     color: ${theme.grisClaro2};
     font-weight: 400;
     font-size: 40px;
     padding: 2.5rem 0; /* 40px */
-` ;
+`;
  
 const ContenedorBotonCentral = styled.div`
     display: flex;
     justify-content: center;
     margin: 2.5rem; /* 40px */
-` ;
+`;
  
 const BotonCargarMas = styled.button`
     background: ${theme.grisClaro};
@@ -184,22 +184,21 @@ const BotonCargarMas = styled.button`
     &:hover {
         background: ${theme.grisClaro2};
     }
-` ;
+`;
  
 export {
-    list ,
-    ElementoList ,
-    ListOfCategories ,
-    ItemListCategories ,
-    Category ,
-    Description ,
-    Value ,
-    date ,
-    ContainerButtons ,
+    Lista,
+    ElementoLista,
+    ListaDeCategorias,
+    ElementoListaCategorias,
+    Categoria,
+    Descripcion,
+    Valor,
+    Fecha,
+    ContenedorBotones,
     BotonAccion,
-    LoadMorebutton ,
+    BotonCargarMas,
     ContenedorBotonCentral,
-    SubtitleContainer ,
-    Caption
-} ;
-export default ElementoLista;
+    ContenedorSubtitulo,
+    Subtitulo
+};
