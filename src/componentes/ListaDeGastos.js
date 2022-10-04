@@ -4,6 +4,7 @@ import {Header, Titulo} from './../elementos/Header';
 import BtnRegresar from "../elementos/BtnRegresar";
 import BarraTotalGastado from "./BarraTotalGastado";
 import useObtenerGastos from "../hooks/useObtenerGastos";
+import ElementoLista from "../elementos/ElementosDeLista";
 
 const ListaDeGastos=()=> {
   const gastos=useObtenerGastos();
