@@ -26,6 +26,8 @@ import { ReactComponent as IconoEditar } from '../imagenes/editar.svg';
 import { ReactComponent as IconoBorrar } from '../imagenes/borrar.svg';
 import { Link } from "react-router-dom";
 import Boton from "../elementos/Boton";
+
+
 const ListaDeGastos=()=> {
   const [gastos]=useObtenerGastos();
   console.log(gastos);
