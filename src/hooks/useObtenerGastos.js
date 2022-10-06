@@ -13,11 +13,11 @@ const useObtenerGastos = (id) => {
 	useEffect(() => {
         const consulta= query(
             collection (db, 'gastos'),
-            where('iudUsuario', '==', usuario.uid),
+            where('uidUsuario', '==', usuario.uid),
             orderBy('fecha', 'desc'),
             limit (10)
         );
-            const unSuscribe= onSnapshot(consulta, (snapshot)=>{
+            const unsuscribe= onSnapshot(consulta, (snapshot)=>{
         if (snapshot.docs.length> 0){
             cambiarUltimoGasto(snapshot.docs[snapshot.docs.length -1]);
             cambiarHayMasPorCargar(true);
@@ -29,7 +29,7 @@ const useObtenerGastos = (id) => {
         }));
         });
 
-    return unSuscribe;
+    return unsuscribe;
 },[usuario]);
 return[gastos, hayMasPorCargar];
 }

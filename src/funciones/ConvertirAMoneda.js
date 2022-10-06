@@ -1,5 +1,3 @@
-
-
 const formatearCantidad =(cantidad)=> {
     return new Intl.NumberFormat(
     'en-US',

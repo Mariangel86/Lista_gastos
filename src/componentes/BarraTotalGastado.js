@@ -1,13 +1,13 @@
 import React from "react";
 import theme from "../elementos/theme";
 import styled from "styled-components";
-import formatearCantidad from "../imagenes/ConvertirAMoneda";
+import ConvertirAMoneda from "../funciones/ConvertirAMoneda";
 
 const BarraTotalGastado=()=> {
     return (
         <BarraTotal>
             <p> total gastado en el mes:</p>
-            <p>{formatearCantidad(0.00)}</p>
+            <p>{ConvertirAMoneda(0.00)}</p>
         </BarraTotal>
   
     );
