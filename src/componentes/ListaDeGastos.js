@@ -26,7 +26,7 @@ import { Link } from "react-router-dom";
 import Boton from "../elementos/Boton";
 import { format, fromUnixTime } from "date-fns";
 import { es } from "date-fns/locale";
-import borrarGasto from "../firebase/borrarGasto";
+import borrarGasto from '../firebase/borrarGasto';
 
 
 const ListaDeGastos=()=> {

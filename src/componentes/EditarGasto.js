@@ -5,18 +5,19 @@ import BtnRegresar from "../elementos/BtnRegresar";
 import BarraTotalGastado from "./BarraTotalGastado";
 import FormularioGasto from './FormularioGasto';
 import { useParams } from "react-router-dom";
+import useObtenerGasto from '../hooks/useObtenerGasto';
 
-
-const editarGasto=()=> {
+const EditarGasto=()=> {
   const {id}= useParams();
+  const [gasto]= useObtenerGasto(id);
   return (
       <>
       <Helmet>
-        <title>editarGasto</title>
+        <title>Editar Gasto</title>
       </Helmet>
       <Header>
           <BtnRegresar/>
-          <Titulo>editarGasto</Titulo>
+          <Titulo>Editar Gasto</Titulo>
       </Header>
       <FormularioGasto gasto={gasto}/>
       <BarraTotalGastado/>
@@ -24,4 +25,4 @@ const editarGasto=()=> {
   );
 }
     
-export default GastosCategoria;
+export default EditarGasto;
