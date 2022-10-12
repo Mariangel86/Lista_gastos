@@ -25,7 +25,7 @@ const useObtenerGastosDelMes=()=>{
                 establecerGastos(snapshot.docs.map((documento)=>{
                     return {...documento.data(), id:documento.id}
                 }))
-            })
+            },(error)=>{console.log(error)});
 
 
     return unsuscribe;

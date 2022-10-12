@@ -13,6 +13,7 @@ import InicioSesion from './componentes/inicioSesion';
 import Fondo from './elementos/Fondo';
 import {AuthProvider} from './contextos/AuthContextos';
 import RutaProtegida from './componentes/RutaPrivada';
+import {TotalGastadoProvider} from './contextos/totalGastadoEnElMesContext'
 
 WebFont.load({
   google: {
@@ -24,34 +25,36 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <>
 <AuthProvider>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/Iniciar-Sesion' element={<InicioSesion/>}/>
-      <Route path='/Crear-cuenta' element={<RegistroUsuarios/>}/>
+    <TotalGastadoProvider>
+          <BrowserRouter>
+                <Routes>
+                  <Route path='/Iniciar-Sesion' element={<InicioSesion/>}/>
+                  <Route path='/Crear-cuenta' element={<RegistroUsuarios/>}/>
 
 
-      <Route path='/Categorias' element={
-        <RutaProtegida>
-      <GastosPorCategoria/>
-      </RutaProtegida>
-    }/>
-      <Route path='/Lista' element={
-      <RutaProtegida>
-      <ListaDeGastos/>
-      </RutaProtegida>}/>
+                  <Route path='/Categorias' element={
+                    <RutaProtegida>
+                  <GastosPorCategoria/>
+                  </RutaProtegida>
+                }/>
+                  <Route path='/Lista' element={
+                  <RutaProtegida>
+                  <ListaDeGastos/>
+                  </RutaProtegida>}/>
 
-      <Route path='/Editar/:id' element={
-        <RutaProtegida>
-      <EditarGasto/>
-      </RutaProtegida>}/>
+                  <Route path='/Editar/:id' element={
+                    <RutaProtegida>
+                  <EditarGasto/>
+                  </RutaProtegida>}/>
 
-      <Route  path='/' element={
-      <RutaProtegida>
-      <App/>
-      </RutaProtegida>}/>
-    </Routes>
-    <Contenedor/>
-    </BrowserRouter>
+                  <Route  path='/' element={
+                  <RutaProtegida>
+                  <App/>
+                  </RutaProtegida>}/>
+                </Routes>
+            <Contenedor/>
+          </BrowserRouter>
+      </TotalGastadoProvider>
     </AuthProvider>
     <Fondo/>
     </>
