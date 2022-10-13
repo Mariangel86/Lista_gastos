@@ -6,8 +6,8 @@ import BarraTotalGastado from "./BarraTotalGastado";
 import useObtenerGastosDelMesPorCategoria from '../hooks/useObtenerGastosDelMesPorCategoria';
 
 const GastosCategoria=()=> {
-  useObtenerGastosDelMesPorCategoria();
-
+ const gastos= useObtenerGastosDelMesPorCategoria();
+console.log(gastos);
   return (
       <>
       <Helmet>
