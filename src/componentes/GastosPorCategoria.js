@@ -4,10 +4,11 @@ import { Helmet } from "react-helmet";
 import BtnRegresar from "../elementos/BtnRegresar";
 import BarraTotalGastado from "./BarraTotalGastado";
 import useObtenerGastosDelMesPorCategoria from '../hooks/useObtenerGastosDelMesPorCategoria';
+import {ListaDeCategorias,ElementoListaCategorias,Categoria,Valor} from '../elementos/ElementosDeLista';
 
 const GastosCategoria=()=> {
- const gastos= useObtenerGastosDelMesPorCategoria();
-console.log(gastos);
+ const gastosPorCategorias = useObtenerGastosDelMesPorCategoria();
+console.log(gastosPorCategorias);
   return (
       <>
       <Helmet>
@@ -17,6 +18,18 @@ console.log(gastos);
           <BtnRegresar/>
           <Titulo>Gasto por Categoria</Titulo>
       </Header>
+
+      <ListaDeCategorias>
+      {gastosPorCategorias.map((elemento, index)=>{
+          return (
+            <ElementoListaCategorias key={index}>
+              <Categoria>{elemento.categoria}</Categoria>
+              <Valor>{elemento.cantidad}</Valor>
+            </ElementoListaCategorias>
+          );
+      })}
+      </ListaDeCategorias>
+
       <BarraTotalGastado/>
 
       </>
