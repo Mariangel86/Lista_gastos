@@ -66,7 +66,7 @@ const InicioSesion=()=> {
               mensaje= 'no se encontro ningun usuario existente'
           default:
               mensaje = 'Hubo un error al intentar crear la cuenta.'
-          break;
+              break;
       }
       cambiarAlerta({tipo:'error', mensaje:{mensaje}});
       }
@@ -104,7 +104,8 @@ const InicioSesion=()=> {
       <Boton as="button" primario type="submit">Iniciar Sesion</Boton>
       </ContenedorBoton>
     </Formulario>
-    <Alerta tipo={alerta.tipo}
+    <Alerta 
+    tipo={alerta.tipo}
             mensaje={alerta.mensaje}
             estadoAlerta={estadoAlerta}
             cambiarEstadoAlerta={cambiarEstadoAlerta}/>

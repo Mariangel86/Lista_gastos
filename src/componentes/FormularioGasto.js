@@ -132,6 +132,7 @@ const FormularioGasto=({gasto})=>{
             <Alerta 
             tipo={alerta.tipo}
             mensaje={alerta.mensaje}
+            estadoAlerta={estadoAlerta}
             cambiarEstadoAlerta={cambiarEstadoAlerta}/>
         </Formulario>
     );
