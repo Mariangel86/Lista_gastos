@@ -64,6 +64,7 @@ const InicioSesion=()=> {
             break;
             case 'auth/user-not-found':
               mensaje= 'no se encontro ningun usuario existente'
+              break;
           default:
               mensaje = 'Hubo un error al intentar crear la cuenta.'
               break;
