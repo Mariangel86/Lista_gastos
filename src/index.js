@@ -27,6 +27,7 @@ root.render(
 <AuthProvider>
     <TotalGastadoProvider>
           <BrowserRouter>
+          <Contenedor>
                 <Routes>
                   <Route path='/Iniciar-Sesion' element={<InicioSesion/>}/>
                   <Route path='/Crear-cuenta' element={<RegistroUsuarios/>}/>
@@ -52,7 +53,7 @@ root.render(
                   <App/>
                   </RutaProtegida>}/>
                 </Routes>
-            <Contenedor/>
+            </Contenedor>
           </BrowserRouter>
       </TotalGastadoProvider>
     </AuthProvider>

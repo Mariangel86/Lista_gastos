@@ -6,7 +6,7 @@ import { UseAuth } from "../contextos/AuthContextos";
 
 const useObtenerGastosDelMes=()=>{
     const [gastos, establecerGastos]= useState([]);
-    const [usuario]=UseAuth();
+    const {usuario} = UseAuth();
 
     useEffect(()=>{
         const inicioDeMes= getUnixTime(startOfMonth(new Date()));

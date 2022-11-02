@@ -21,10 +21,12 @@ const SelectCategorias=({categoria, cambiarCategoria})=>{
         cambiarCategoria(e.currentTarget.dataset.valor);
     }
     return (
-        <ContenedorSelect onClick={()=>cambiarMostrarSelect (!mostrarSelect)}>
+        <ContenedorSelect onClick={() => cambiarMostrarSelect (!mostrarSelect)}>
          <OpcionSeleccionada>
-            {categoria}<IconoDown/>
+            {categoria}
+            <IconoDown/>
             </OpcionSeleccionada>
+            {mostrarSelect &&
             <Opciones>
             {categorias.map((categoria)=>{
                return <Opcion
@@ -36,6 +38,7 @@ const SelectCategorias=({categoria, cambiarCategoria})=>{
                 </Opcion>
             })}
             </Opciones>   
+}
         </ContenedorSelect>
     );
 }

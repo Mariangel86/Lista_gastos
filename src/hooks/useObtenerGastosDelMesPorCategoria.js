@@ -5,7 +5,8 @@ const useObtenerGastosDelMesPorCategoria=()=>{
     const [gastosPorCategoria, cambiarGastosPorCategoria]= useState([]);
     const gastos= useObtenerGastosDelMes();
 
-    useEffect(()=>{const sumaDeGastos= gastos.reduce((objetoResultante, objetoActual)=>{
+    useEffect(()=>{
+        const sumaDeGastos= gastos.reduce((objetoResultante, objetoActual)=>{
         const categoriaActual= objetoActual.categoria;
         const cantidadActual= objetoActual.cantidad;
         objetoResultante[categoriaActual]+= cantidadActual;

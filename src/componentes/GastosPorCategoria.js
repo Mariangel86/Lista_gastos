@@ -26,8 +26,10 @@ console.log(gastosPorCategorias);
           return (
             <ElementoListaCategorias key={index}>
               <Categoria>
-                <IconoCategoria id={elemento.categoria}/>
-              {elemento.categoria}</Categoria>
+                <IconoCategoria
+                id={elemento.categoria}/>
+              {elemento.categoria}
+              </Categoria>
               <Valor>{convertirAMoneda(elemento.cantidad)}</Valor>
             </ElementoListaCategorias>
           );
