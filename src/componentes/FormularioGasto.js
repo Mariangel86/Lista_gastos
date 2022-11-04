@@ -36,7 +36,7 @@ const FormularioGasto=({gasto})=>{
     },[gasto,usuario, Navigate]);
 
     //datepicker
-    const [fecha, cambiarFecha]= useState (new Date());
+    const [fecha, cambiarFecha]= useState(new Date());
 
 
     const handleChange=(e)=>{
@@ -94,7 +94,7 @@ const FormularioGasto=({gasto})=>{
         
         } else{
             cambiarEstadoAlerta(true);
-        cambiarAlerta ({tipo: 'error', mensaje:'Por favor rellena todos los campos'})
+        cambiarAlerta ({tipo: 'error', mensaje:'Por favor rellena todos los campos'});
         }
     }
     return (
@@ -116,15 +116,15 @@ const FormularioGasto=({gasto})=>{
 
             <InputGrande
             type='text'
-            name='valor'
-            id='valor'
+            name="cantidad"
+            id="cantidad"
             placeholder="$0.00"
             value={inputCantidad}
             onChange={handleChange}
             />
             </div>
             <ContenedorBoton>
-                <Boton as='button' primario conIcono type="submit">
+                <Boton as="button" primario conIcono type="submit">
                     {gasto ? 'Editar Gasto': 'Agregar Gasto'}
                     <IconoPlus/>
                 </Boton>
