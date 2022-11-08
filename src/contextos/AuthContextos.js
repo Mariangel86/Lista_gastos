@@ -13,7 +13,7 @@ const UseAuth=()=>{
 }
 const AuthProvider=({children})=>{
     const [usuario, cambiarUsuario]= useState();
-    const [cargando, cambiarCargando]= useState();
+    const [cargando, cambiarCargando]= useState(true);
     //comprobacion de una sola vez
 
     useEffect(()=>{

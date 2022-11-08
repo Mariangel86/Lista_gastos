@@ -8,7 +8,7 @@ const RutaProtegida =({children})=>{
         if (usuario){
             return children;
         } else{
-            return <Navigate replace to='/iniciar-sesion'/>
+            return <Navigate replace to= "/iniciar-sesion" />
         }
      
 }
