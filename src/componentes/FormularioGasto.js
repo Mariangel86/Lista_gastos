@@ -42,8 +42,8 @@ const FormularioGasto=({gasto})=>{
     const handleChange=(e)=>{
         if (e.target.name === 'descripcion'){
             cambiarInputDescripcion(e.target.value);
-        } else if (e.target.name==='valor'){
-        cambiarInputCantidad (e.target.value.replace(/[^0-9.]/g,''));
+        } else if (e.target.name==='cantidad'){
+        cambiarInputCantidad(e.target.value.replace(/[^0-9.]/g,''));
         }
     }
     const handleSubmit=(e)=>{
