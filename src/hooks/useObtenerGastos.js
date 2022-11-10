@@ -23,8 +23,7 @@ const useObtenerGastos = (id) => {
                     cambiarUltimoGasto(snapshot.docs[snapshot.docs.length -1]);
 
                     cambiarGastos(gastos.concat(snapshot.docs.map((gasto)=>{
-                        return{
-                            ...gasto.data(), id:gasto.id
+                        return{...gasto.data(), id:gasto.id
                         }
                     })))
                 }else{

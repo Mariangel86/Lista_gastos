@@ -4,44 +4,6 @@ import theme from "../elementos/theme";
 import {ReactComponent as IconoDown} from '../imagenes/down.svg';
 import IconoCategoria from "../elementos/IconoCategoria";
 
-const SelectCategorias=({categoria, cambiarCategoria})=>{
-    const [mostrarSelect, cambiarMostrarSelect]= useState(false);
-
-    const categorias = [
-        {id: 'comida', texto: 'Comida'},
-        {id: 'cuentas y pagos', texto: 'Cuentas y pagos'},
-        {id: 'hogar', texto: 'Hogar'},
-        {id: 'transporte', texto: 'Transporte'},
-        {id: 'ropa', texto: 'Ropa'},
-        {id: 'salud e higiene', texto: 'Salud e Higiene'},
-        {id: 'compras', texto: 'Compras'},
-        {id: 'diversion', texto: 'Diversion'}
-    ];
-    const handleClick=(e) =>{
-        cambiarCategoria(e.currentTarget.dataset.valor);
-    }
-    return (
-        <ContenedorSelect onClick={() => cambiarMostrarSelect (!mostrarSelect)}>
-         <OpcionSeleccionada>
-            {categoria}
-            <IconoDown/>
-            </OpcionSeleccionada>
-            {mostrarSelect &&
-            <Opciones>
-            {categorias.map((categoria)=>{
-               return <Opcion
-                key={categoria.id}
-                data-valor={categoria.id}
-                onClick={handleClick}>
-                    <IconoCategoria id={categoria.id}/>
-                {categoria.texto}
-                </Opcion>
-            })}
-            </Opciones>   
-}
-        </ContenedorSelect>
-    );
-}
 const ContenedorSelect = styled.div`
     background: ${theme.grisClaro};
     cursor: pointer;
@@ -96,4 +58,44 @@ const Opcion = styled.div`
         background: ${theme.grisClaro2};
     }
 `;
+
+const SelectCategorias=({categoria, cambiarCategoria})=>{
+    const [mostrarSelect, cambiarMostrarSelect]= useState(false);
+
+    const categorias = [
+        {id: 'comida', texto: 'Comida'},
+        {id: 'cuentas y pagos', texto: 'Cuentas y pagos'},
+        {id: 'hogar', texto: 'Hogar'},
+        {id: 'transporte', texto: 'Transporte'},
+        {id: 'ropa', texto: 'Ropa'},
+        {id: 'salud e higiene', texto: 'Salud e Higiene'},
+        {id: 'compras', texto: 'Compras'},
+        {id: 'diversion', texto: 'Diversion'}
+    ];
+    const handleClick=(e) =>{
+        cambiarCategoria(e.currentTarget.dataset.valor);
+    }
+    return (
+        <ContenedorSelect onClick={() => cambiarMostrarSelect (!mostrarSelect)}>
+         <OpcionSeleccionada>
+            {categoria}
+            <IconoDown/>
+            </OpcionSeleccionada>
+            {mostrarSelect &&
+            <Opciones>
+            {categorias.map((categoria)=>{
+               return <Opcion
+                key={categoria.id}
+                data-valor={categoria.id}
+                onClick={handleClick}>
+                    <IconoCategoria id={categoria.id}/>
+                {categoria.texto}
+                </Opcion>
+            })}
+            </Opciones>   
+}
+        </ContenedorSelect>
+    );
+}
+
 export default SelectCategorias;
