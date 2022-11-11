@@ -15,11 +15,11 @@ const useObtenerGastos = (id) => {
         where('uidUsuario', '==', usuario.uid),
         orderBy('fecha', 'desc'),
         limit (10),
-        startAfter(ultimoGasto))
+        startAfter(ultimoGasto));
 
         
             onSnapshot(consulta,(snapshot)=>{
-                if(snapshot.docs.length>0){
+                if(snapshot.docs.length > 0){
                     cambiarUltimoGasto(snapshot.docs[snapshot.docs.length -1]);
 
                     cambiarGastos(gastos.concat(snapshot.docs.map((gasto)=>{
@@ -29,7 +29,7 @@ const useObtenerGastos = (id) => {
                 }else{
                     cambiarHayMasPorCargar(false);
                 }
-            });
+            }, error => {console.log(error)});
 
     }
 
@@ -52,7 +52,7 @@ const useObtenerGastos = (id) => {
             cambiarUltimoGasto(snapshot.docs[snapshot.docs.length-1]);
         }
 
-        cambiarGastos(snapshot.docs.map((gasto)=>{
+        cambiarGastos(snapshot.docs.map((gasto)=> {
             return {...gasto.data(), id:gasto.id}
         }));
         });

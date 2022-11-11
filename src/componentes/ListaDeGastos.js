@@ -32,13 +32,13 @@ import borrarGasto from '../firebase/borrarGasto';
 const ListaDeGastos=()=> {
   const [gastos, obtenerMasGastos, hayMasPorCargar]=useObtenerGastos();
   const formatearFecha=(fecha)=>{
-      return format(fromUnixTime(fecha), "dd 'de' MMMM 'de' yyyy", {locale: es});
+      return format(fromUnixTime(fecha), "dd 'de' MMMM 'de' yyyy", {locale: es})
   }
 
   const fechaEsIgual= (gastos,index,gasto)=>{
     if (index !== 0){
       const fechaActual= formatearFecha(gasto.fecha);
-      const fechaGastoAnterior= gastos[index-1].fecha
+      const fechaGastoAnterior= formatearFecha(gastos[index-1].fecha);
 
       if(fechaActual===fechaGastoAnterior){
         return(true);
@@ -57,11 +57,12 @@ const ListaDeGastos=()=> {
         <BtnRegresar/>
         <Titulo>Lista de Gastos</Titulo>
     </Header>
+
     <Lista>
       {gastos.map((gasto, index)=>{
         return(
           <div key={gasto.id}>
-            {!fechaEsIgual(gastos, index, gasto)&& <Fecha>{formatearFecha (gasto.fecha)}</Fecha>}
+            {!fechaEsIgual(gastos, index, gasto) && <Fecha>{formatearFecha (gasto.fecha)}</Fecha>}
           
           <ElementoLista key={gasto.id}>
             <Categoria>
