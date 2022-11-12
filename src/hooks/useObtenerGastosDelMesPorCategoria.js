@@ -24,7 +24,7 @@ const useObtenerGastosDelMesPorCategoria=()=>{
         });
       
         cambiarGastosPorCategoria(Object.keys(sumaDeGastos).map((elemento)=>{
-            return {categoria:elemento, cantidad: sumaDeGastos[elemento]}
+            return {categoria: elemento, cantidad: sumaDeGastos[elemento]}
         }));
     },[gastos, cambiarGastosPorCategoria])
    

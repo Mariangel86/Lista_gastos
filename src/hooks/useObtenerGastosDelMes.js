@@ -29,7 +29,7 @@ const useObtenerGastosDelMes=()=>{
 
 
     return unsuscribe;
-}
+    }
 },[usuario]);
 
     return gastos;
