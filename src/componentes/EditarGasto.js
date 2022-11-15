@@ -16,7 +16,7 @@ const EditarGasto=()=> {
         <title>Editar Gasto</title>
       </Helmet>
       <Header>
-          <BtnRegresar/>
+          <BtnRegresar ruta="/Lista"/>
           <Titulo>Editar Gasto</Titulo>
       </Header>
       <FormularioGasto gasto={gasto}/>

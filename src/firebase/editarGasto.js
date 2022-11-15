@@ -1,11 +1,12 @@
 import {db} from './firebaseConfig';
 import { doc, updateDoc } from 'firebase/firestore';
 
-const agregarGasto= ({id,categoria, descripcion, cantidad, fecha, uidUsuario}) => {
+const editarGasto= async ({id,categoria, descripcion, cantidad, fecha}) => {
     const documento= doc (db, 'gastos',id);
-    return  updateDoc(documento, {categoria: categoria,
+    return await updateDoc(documento, {categoria: categoria,
 		descripcion: descripcion,
 		cantidad: Number(cantidad),
-		fecha: fecha,});
+		fecha: fecha
+	});
 }
-export default agregarGasto;
+export default editarGasto;
