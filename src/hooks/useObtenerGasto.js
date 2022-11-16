@@ -9,18 +9,18 @@ const useObtenerGasto=(id)=>{
     const Navigate= useNavigate();
 
     useEffect(()=>{
-        const[obtenerGasto]= async()=>{
+        const obtenerGasto= async()=>{
      const documento =  await getDoc(doc(db, 'gastos', id));
 
      if(documento.exists){
         establecerGasto(documento);
         }else{
-            Navigate('/lista')
+            Navigate('/Lista');
         }
 
     }
         obtenerGasto();
-    })
+    }, [Navigate,id]);
     return [gasto];
 }
 
