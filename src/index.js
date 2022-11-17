@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import WebFont from 'webfontloader';
+/*import WebFont from 'webfontloader';*/
 import Contenedor from './elementos/Contenedor';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import EditarGasto from './componentes/EditarGasto';
@@ -15,11 +15,11 @@ import {AuthProvider} from './contextos/AuthContextos';
 import RutaProtegida from './componentes/RutaPrivada';
 import {TotalGastadoProvider} from './contextos/totalGastadoEnElMesContext'
 
-WebFont.load({
+/*WebFont.load({
   google: {
     families: ['Work sans 400,500,700', 'sans-serif']
   }
-});
+});*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
