@@ -67,7 +67,10 @@ const Categoria = styled.div`
         border-radius: 0.62rem; /* 10px */
     }
  
-    @media (max-width: 50rem) { /* 80px */
+    @media (max-width: 50rem) { /* 800px */
+        font-size: 1.12rem;
+    }
+    @media (min-width: 10rem) { /* 160px */
         font-size: 1.12rem;
     }
 `;
@@ -77,6 +80,9 @@ const Descripcion = styled.div`
     font-size: 1.25rem;
     text-transform: capitalize;
     @media (max-width: 50rem) { /* 50px */
+        justify-content: end;
+    }
+    @media (min-width: 10rem) { /* 50px */
         justify-content: end;
     }
 `;

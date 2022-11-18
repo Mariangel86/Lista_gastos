@@ -14,7 +14,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: 'Work Sans', sans-serif;
+	/*font-family: 'Work Sans', sans-serif;*/
 }
 
 #root {
@@ -22,6 +22,11 @@ body {
 }
 
 @media screen and (max-width: 60rem){ /* 950px */
+	:root {
+		font-size: 14px;
+	}
+}
+@media screen and (min-width: 10rem){ /* 160px */
 	:root {
 		font-size: 14px;
 	}
