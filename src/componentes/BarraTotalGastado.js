@@ -26,7 +26,7 @@ const BarraTotalGastado=()=> {
     color: #fff;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
  
     @media(max-width: 31.25rem) { /* 500px */
         flex-direction: column;
