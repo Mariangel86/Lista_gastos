@@ -22,7 +22,7 @@ const ContenedorSelect = styled.div`
     }
     @media(max-width: 30rem){ /* 950px */
 		font-size: 1.5rem; /* 24px */
-        width:50%; /*481px*/
+        width:70%; /*481px*/
 	}
 `;
  
