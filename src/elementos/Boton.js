@@ -25,5 +25,8 @@ const Boton = styled(Link)`
 		height: ${(props) => props.iconoGrande ? '100%' : '0.75rem;'};  /* 12px */
 		fill: white;
 	}
+	@media(max-width: 30rem){ /* 950px */
+		font-size: 1rem; /* 14px */
+	}
 `;
 export default Boton;

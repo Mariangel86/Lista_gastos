@@ -20,6 +20,10 @@ const ContenedorSelect = styled.div`
     &:hover {
         background: ${theme.grisClaro2};
     }
+    @media(max-width: 30rem){ /* 950px */
+		font-size: 1.5rem; /* 24px */
+        width:50%; /*481px*/
+	}
 `;
  
 const OpcionSeleccionada = styled.div`
@@ -33,14 +37,10 @@ const OpcionSeleccionada = styled.div`
         height: auto;
         margin-left: 1.25rem; /* 20px */
     }
-    @media screen (min-width: 10rem){ /* 950px */
-    font-size: 1rem; /* 24px */
-    width: 50%
-}
 `;
  
 const Opciones = styled.div`
-    background: ${theme.grisClaro};
+    {background: ${theme.grisClaro};
     position: absolute;
     top: 5.62rem; /* 90px */
     left: 0;
@@ -48,6 +48,11 @@ const Opciones = styled.div`
     border-radius: 0.625rem; /* 10px */
     max-height: 18.75rem; /* 300px */
     overflow-y: auto;
+    }
+    @media(max-width: 30rem){ /* 950px */
+		font-size: 1.2rem; /* 24px */
+        width:150%; /*481px*/
+	}
 `;
  
 const Opcion = styled.div`

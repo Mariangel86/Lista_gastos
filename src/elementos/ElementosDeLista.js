@@ -106,7 +106,7 @@ const Fecha = styled.div`
 `;
  
 const ContenedorBotones = styled.div`
-    @media (max-width: 50rem) { /* 80px */
+    @media (max-width: 50rem) { /* 800px */
         justify-content: end;
     }
 `;

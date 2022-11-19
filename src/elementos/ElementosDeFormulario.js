@@ -45,8 +45,8 @@ const Input = styled.input`
 	border-bottom: 2px solid ${theme.grisClaro};
 	outline: none;
 
-	@media(max-width: 60rem){ /* 950px */
-		font-size: 2.2rem; /* 24px */
+	@media(max-width: 30rem){ /* 950px */
+		font-size: 1.5rem; /* 24px */
 	}
 `;
 
