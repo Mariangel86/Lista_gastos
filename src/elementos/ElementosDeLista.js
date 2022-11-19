@@ -67,7 +67,7 @@ const Categoria = styled.div`
         border-radius: 0.62rem; /* 10px */
     }
  
-    @media (max-width: 50rem) { /* 800px */
+    @media (max-width: 50rem) { /* 80px */
         font-size: 1.12rem;
     }
 `;

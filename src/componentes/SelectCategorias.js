@@ -33,6 +33,10 @@ const OpcionSeleccionada = styled.div`
         height: auto;
         margin-left: 1.25rem; /* 20px */
     }
+    @media screen (min-width: 10rem){ /* 950px */
+    font-size: 1rem; /* 24px */
+    width: 50%
+}
 `;
  
 const Opciones = styled.div`
