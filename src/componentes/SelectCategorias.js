@@ -21,7 +21,7 @@ const ContenedorSelect = styled.div`
         background: ${theme.grisClaro2};
     }
     @media(max-width: 30rem){ /* 950px */
-		font-size: 1.5rem; /* 24px */
+		font-size: 1.2rem; /* 24px */
         width:70%; /*481px*/
 	}
 `;
